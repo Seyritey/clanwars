@@ -15,7 +15,6 @@ $res2 = mysql_query($query2);
 $result2 = mysql_fetch_assoc($res2);
 $authorname = $result2['name'];
 $ctime = $result['ctime'];
-$ctime = date('F j, H:i', $ctime);
 $etime = $result['etime'];
 $rating_color = "#666";
 if (($rating >= 0) and ($rating < 100))
