@@ -1,6 +1,6 @@
 <?php
 include 'blocks/header.php';
-$uid = $_GET['id'];
+$uid = (int)$_GET['id'];
 $uid = mysql_real_escape_string($uid);
 $result = mysql_query("SELECT name,bdate,sex,karma FROM users WHERE id=$uid");
 $resname = mysql_fetch_assoc($result);

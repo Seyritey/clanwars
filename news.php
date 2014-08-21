@@ -69,14 +69,14 @@ $authorname = AuthorName2($author_id);
 $comment = mysql_result($res3,$i,comment);
 $ctime = mysql_result($res3,$i,ctime);
 $avatar = AuthorAvatar($author_id);
-
+$avalink = "location.href='/profile.php?id=" . $author_id . "'";
 
 echo "<div id='comments'>
     <div class='list'>
         <li>
             <div class='body'>
                 <div class='thumb'>
-                    <img alt='' src='$avatar'>
+                    <img alt='' src='$avatar' onclick=" . $avalink . ">
                 </div>
                 <div class='leftpointer'></div>
                 <div class='quote'>
