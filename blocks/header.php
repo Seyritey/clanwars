@@ -61,7 +61,7 @@ if (!$_SESSION['login']) {
     echo '<a href="' . $url . '?' . urldecode(http_build_query($params)) . '&display=popup">Войти на сайт</a>'; 
   }
 if ($_SESSION['login']) { 
-    echo '<a href="/profile.php?id=' . $uid . '">' . $login . '</a></li>
+    echo '<a href="/profile.php?id=' . $uid . '">' . htmlspecialchars($login) . '</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-right"></span></a>
           <ul class="dropdown-menu" role="menu">

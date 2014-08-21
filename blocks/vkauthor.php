@@ -38,10 +38,10 @@ if (isset($_GET['code'])) {
     }
 
     $query = mysql_query("SELECT COUNT(social_id) FROM users WHERE social_id='".mysql_real_escape_string($userInfo['uid'])."'");
-    $query24 = "SELECT id,name FROM users WHERE social_id=" . $userInfo['uid'];
+    $query24 = "SELECT id,name FROM users WHERE social_id=" . mysql_real_escape_string($userInfo['uid']);
     $res24 = mysql_query($query24);
     $result24 = mysql_fetch_assoc($res24);
-    $login = $result24['name'];
+    $login = mysql_real_escape_string($result24['name']);
     $uid = $result24['id'];
     if(mysql_result($query, 0) > 0)
 
@@ -53,7 +53,7 @@ if (isset($_GET['code'])) {
     }
     elseif(count($err) == 0)
     {
-    	$name = $userInfo['first_name'] . " " . $userInfo['last_name'];
+    	$name = mysql_real_escape_string($userInfo['first_name']) . " " . mysql_real_escape_string($userInfo['last_name']);
     	$social_id = $userInfo['uid'];
     	$avatar_big = $userInfo['photo_400_orig'];
         $avatar_small = $userInfo['photo_100'];
@@ -63,7 +63,7 @@ if (isset($_GET['code'])) {
         $query24 = "SELECT id,name FROM users WHERE social_id=" . $userInfo['uid'];
         $res24 = mysql_query($query24);
         $result24 = mysql_fetch_assoc($res24);
-        $login = $result24['name'];
+        $login = mysql_real_escape_string($result24['name']);
         $uid = $result24['id'];
         $ress = mysql_query("INSERT INTO avatars SET id='".$uid."', big='$avatar_big', small='$avatar_small'");
             $_SESSION['login'] = $login;

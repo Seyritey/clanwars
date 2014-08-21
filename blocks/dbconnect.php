@@ -1,5 +1,6 @@
 <?php
 header ("Content-Type: text/html; charset=utf-8");
+ini_set('session.gc_maxlifetime', 120960);
 session_start();
 
 $dbhost = "mysql47.1gb.ru";
