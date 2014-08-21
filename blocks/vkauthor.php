@@ -1,7 +1,7 @@
 <?php
 $client_id = '4510119'; // ID приложения
 $client_secret = 'lGnqmBphXLzjW4xQKJca'; // Защищённый ключ
-$redirect_uri = 'http://localhost'; // Адрес сайта
+$redirect_uri = 'http://clanwars'; // Адрес сайта
 
 $url = 'http://oauth.vk.com/authorize';
 

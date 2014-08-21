@@ -1,5 +1,5 @@
 <?php
-include 'blocks/dbconnect.php';
+include_once 'blocks/dbconnect.php';
   function head($title) {
 include_once 'blocks/vkauthor.php';
     echo <<<ST
@@ -34,7 +34,7 @@ include_once 'blocks/vkauthor.php';
         <li class="active"><a href="#">Ссылка</a></li>
         <li><a href="#">В сибирь</a></li>
         <li class="dropdown">
-          <a href="/index.php" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <a href="/index.php" class="dropdown-toggle" data-toggle="dropdown">Управление <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="/index.php">Action</a></li>
             <li><a href="#">Another action</a></li>
