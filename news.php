@@ -1,7 +1,7 @@
 <?php
 include 'blocks/header.php';
 $nid = mysql_real_escape_string((int)$_GET['id']);
-$query = "SELECT rating, name, author_id, message,ctime,etime FROM news WHERE id = " . $nid;
+$query = 'SELECT rating, name, author_id, message,ctime,etime FROM news WHERE id = ' . $nid;
 $res = mysql_query($query);
 $result = mysql_fetch_assoc($res);
 $rating = $result['rating'];
@@ -49,8 +49,8 @@ function AuthorName2($id)
     {
         $query233 = "SELECT name FROM users WHERE id=$id";
         $result23 = mysql_query($query233);
-        $result23 = mysql_fetch_assoc($result23);
-        $resname =  mysql_real_escape_string($result['name']);
+        $resname = mysql_fetch_assoc($result23);
+        $resname =  mysql_real_escape_string($resname['name']);
         return $resname;
     }
 function AuthorAvatar($udid)
@@ -71,13 +71,25 @@ $ctime = mysql_result($res3,$i,ctime);
 $avatar = AuthorAvatar($author_id);
 
 
-echo "
-			<div class='comment'>
-				<div class='avatar'><img src='$avatar' width='100px' height='100px' class='img-thumbnail'><br>
-				<a class='marg' href='/profile.php?id=$author_id'>" . htmlspecialchars($authorname) . "</a><div class='timecc'>$ctime</div></div>
-				<div class='comm'>" . htmlspecialchars($comment) . "</div>
-			</div>";
+echo "<div id='comments'>
+    <div class='list'>
+        <li>
+            <div class='body'>
+                <div class='thumb'>
+                    <img alt='' src='$avatar'>
+                </div>
+                <div class='leftpointer'></div>
+                <div class='quote'>
+                    <div class='textinfo'>
+                        <a href='/profile.php?id=" . $author_id . "' class='user'>" . htmlspecialchars($authorname) . "</a>
+                        <span class='time'>$ctime</span>
+                    </div>
+                    <p>" . htmlspecialchars($comment) . "</p>
+                </div>
+            </div>
+        </li>
+    </div>
+</div>";
 }
 include 'blocks/footer.php'
 ?>
-

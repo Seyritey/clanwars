@@ -105,3 +105,17 @@ fieldset[disabled] .btn2 {
           box-shadow: none;
   opacity: .65;
 }
+
+
+#comments{ float: left; clear: both; margin: 0 0px 0px 0; width: 100%; }
+#comments .list{ clear: both; list-style-position: outside; padding: 0px;}
+#comments .list li{ list-style-type: none; position: relative; margin-bottom: 10px;  }
+#comments .body{ margin: 7px 0; display: block; }
+#comments .thumb{ width: 58px; height: 58px; float: left; position: absolute; left: 17px; top: 5px;} 
+#comments .thumb img{ width: 58px; height: 58px; background: none; padding: 0; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+#comments .leftpointer{ background: url(/leftpoin.png) 0 0 no-repeat; width: 12px; height: 23px; position: absolute; left: 84px; top: 15px; z-index: 8; }
+#comments .quote{ border:1px solid #E5E5E5; border-radius: 4px; padding:15px; margin-left:95px; line-height:18px; background-color:#fff; word-wrap: break-word;}
+#comments .quote p{ margin:0px 0px 0px 0px !important; padding:10px 0 0 0 !important; line-height:20px; background:none; clear:none; font-style:normal; }
+#comments .textinfo{ font-size:11px; margin:0; padding:0px; color: gray;}
+#comments .textinfo .user{ font-size:14px; margin:0; padding:0px; color: #006595; font-weight: bold; }
+#comments .textinfo .time{ font-size:12px; margin:0; padding:0px; color: gray; }
