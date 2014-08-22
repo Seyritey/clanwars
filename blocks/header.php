@@ -1,7 +1,7 @@
 <?php
 include_once 'blocks/dbconnect.php';
+
   function head($title) {
-include_once 'blocks/vkauthor.php';
     echo <<<ST
 <!DOCTYPE html>
 <html lang="en">
@@ -55,13 +55,13 @@ include_once 'blocks/vkauthor.php';
       <ul class="nav navbar-nav navbar-right">
         <li>
 ST;
-$login = $_SESSION['login'];
-$uid = $_SESSION['uid'];
+include_once 'blocks/vkauthor.php';
 if (!$_SESSION['login']) {
+    $_SESSION['login'] = NULL;
     echo '<a href="' . $url . '?' . urldecode(http_build_query($params)) . '&display=popup">Войти на сайт</a>'; 
   }
 if ($_SESSION['login']) { 
-    echo '<a href="/profile.php?id=' . $uid . '">' . htmlspecialchars($login) . '</a></li>
+    echo '<a href="/profile.php?id=' . $_SESSION['uid'] . '">' . htmlspecialchars($_SESSION['login']) . '</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-right"></span></a>
           <ul class="dropdown-menu" role="menu">

@@ -1,25 +1,17 @@
 <?php
 include 'blocks/header.php';
 $uid = (int)$_GET['id'];
-$uid = mysql_real_escape_string($uid);
-$result = mysql_query("SELECT name,bdate,sex,karma FROM users WHERE id=$uid");
-$resname = mysql_fetch_assoc($result);
-$result2 = mysql_query("SELECT big FROM avatars WHERE id=$uid");
-$resname2 = mysql_fetch_assoc($result2);
+$result = $db->query('SELECT name,bdate,sex,karma FROM users WHERE id=?i',$uid);
+$resname = mysqli_fetch_array($result);
+$result2 = $db->query('SELECT big FROM avatars WHERE id=?i',$uid);
+$resname2 = mysqli_fetch_array($result2);
 $name = $resname['name'];
-$name = mysql_real_escape_string($name);
 $name = htmlspecialchars($name);
 head ($name . ' - ClanWars');
-$avatar = $resname2['big'];
-$bdate = $resname['bdate'];
-$sex = $resname['sex'];
-$karma = $resname['karma'];
-echo "
-$name
-<img src='" . $avatar . "' alt='" . $name . "' class='img-thumbnail'>
-$bdate
-$sex
-$karma
+echo "$name <img src='" . $resname2['big'] . "' alt='" . $name . "' class='img-thumbnail'>
+",$resname['bdate'],
+$resname['sex'],
+$resname['karma'],"
 Какой-то текст ";
 include 'blocks/footer.php';
 

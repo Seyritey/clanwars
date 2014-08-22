@@ -1,7 +1,6 @@
 <?php
-$query = "SELECT id,name,rating,author_id FROM news ORDER BY id desc";
-$result = mysql_query($query);
-
+$limit = 10;
+$result = $db->query("SELECT id,name,rating,author_id FROM news ORDER BY id desc LIMIT ?i",$limit);
 
 echo <<<START
             <h1 class="centr">Новости</h1>
@@ -18,28 +17,36 @@ START;
 
 function AuthorName($id)
     {
-        $query2 = "SELECT name FROM users WHERE id=$id";
-        $result23 = mysql_query($query2);
-        $resname = mysql_fetch_assoc($result23);
-        return mysql_real_escape_string($resname['name']);
+      global $db;
+        $query2 = $db->query('SELECT name FROM users WHERE id=?i',$id);
+        $resname = mysqli_fetch_array($query2);
+        return $resname['name'];
     }
-$rating_color = "black";
 
-for($i=0;$i<10;$i++) { 
-$id = mysql_result($result,$i,id);
-$author_id = mysql_result($result,$i,author_id);
-$authorname = AuthorName($author_id);
-$rating = mysql_result($result,$i,rating);
-if ($rating >= 100)
-    {$rating_color = green;}
-else {$rating_color = black;};
-if ($rating < 0)
-    {$rating_color = red;};
-$location = "location.href='/news.php?id=$id'";
-$newsname = mysql_result($result,$i,name);
-$userlink = "location.href='/profile.php?id=$author_id'";
-    echo "<tr><td class='btn2' onclick=",$location, ">" . htmlspecialchars($newsname) . "</td><td class='btn2' onclick=",$userlink, ">" . htmlspecialchars($authorname) . "</td><td style='color: $rating_color'>$rating</td></tr>";
- }
+
+while($data = mysqli_fetch_array($result)) {
+
+$news = array(
+        'id' => $data['id'],
+        'author_id' => $data['author_id'],
+        'authorname' => AuthorName($data['author_id']),
+        'rating' => $data['rating'],
+        'newsname' => $data['name']
+    );
+if ($news['rating'] >= 100)
+    {$rating_color = 'green';}
+elseif ($news['rating'] < -10)
+    {$rating_color = 'red';}
+else {
+  $rating_color = 'black';
+}
+
+$location = "location.href='/news.php?id=" . $news['id'] . "'";
+$userlink = "location.href='/profile.php?id=" . $news['author_id'] . "'";
+    echo "<tr><td class='btn2' onclick=",$location, ">" . htmlspecialchars($news['newsname']) . "</td><td class='btn2' onclick=",$userlink, ">" . htmlspecialchars($news['authorname']) . "</td><td style='color: $rating_color'>",$news['rating'],"</td></tr>";
+
+}
+
 echo <<<END
                   </tbody>
                 </table>

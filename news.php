@@ -1,20 +1,18 @@
 <?php
 include 'blocks/header.php';
-$nid = mysql_real_escape_string((int)$_GET['id']);
-$query = 'SELECT rating, name, author_id, message,ctime,etime FROM news WHERE id = ' . $nid;
-$res = mysql_query($query);
-$result = mysql_fetch_assoc($res);
-$rating = $result['rating'];
+$nid = ((int)$_GET['id']);
+$query = $db->query('SELECT rating, name, author_id, message,ctime,etime FROM news WHERE id =?i',$nid);
+$result = mysqli_fetch_array($query);
+(int)$rating = $result['rating'];
 (string)$name = $result['name'];
 head ($name . ' - ClanWars');
 
 $author_id = $result['author_id'];
-(string)$message = mysql_real_escape_string($result['message']);
+(string)$message = $result['message'];
 
-$query2 = "SELECT name FROM users WHERE id=$author_id";
-$res2 = mysql_query($query2);
-$result2 = mysql_fetch_assoc($res2);
-$authorname = mysql_real_escape_string($result2['name']);
+$query2 = $db->query('SELECT name FROM users WHERE id=?i',$author_id);
+$result2 = mysqli_fetch_array($query2);
+$authorname = $result2['name'];
 $ctime = $result['ctime'];
 $etime = $result['etime'];
 $rating_color = "#666";
@@ -26,9 +24,8 @@ elseif (($rating < 0) and ($rating > -100))
 	{$rating_color = "#D82D23";}
 elseif ($rating <=100)
 	{$rating_color = "#FA3434";}
-$query3 = "SELECT id,author_id,comment,ctime FROM comments WHERE news_id = $nid ORDER BY ctime ASC";
-$res3 = mysql_query($query3);
-$n = mysql_num_rows($res3);
+$query = $db->query('SELECT id,author_id,comment,ctime FROM comments WHERE news_id=?i ORDER BY ctime ASC',$nid);
+$n = mysqli_num_rows($query);
 
 echo "
 			<div class='transbox'>
@@ -43,48 +40,38 @@ echo "
 			<br><br>";
 
 
-
-
 function AuthorName2($id)
     {
-        $query233 = "SELECT name FROM users WHERE id=$id";
-        $result23 = mysql_query($query233);
-        $resname = mysql_fetch_assoc($result23);
-        $resname =  mysql_real_escape_string($resname['name']);
-        return $resname;
+        global $db;
+        $query233 = $db->query('SELECT name FROM users WHERE id=?i',$id);
+        $resname = mysqli_fetch_array($query233);
+        return htmlspecialchars($resname['name']);
     }
 function AuthorAvatar($udid)
     {
-        $query233 = "SELECT small FROM avatars WHERE id=$udid";
-        $result23 = mysql_query($query233);
-        $resname = mysql_fetch_assoc($result23);
+        global $db;
+        $query233 = $db->query('SELECT small FROM avatars WHERE id=?i',$udid);
+        $resname = mysqli_fetch_array($query233);
         return $resname['small'];
     }
 
+while($data = mysqli_fetch_array($query)) {
 
-for($i=0;$i<$n;$i++) { 
-$id = mysql_result($res3,$i,id);
-$author_id = mysql_result($res3,$i,author_id);
-$authorname = AuthorName2($author_id);
-$comment = mysql_result($res3,$i,comment);
-$ctime = mysql_result($res3,$i,ctime);
-$avatar = AuthorAvatar($author_id);
-$avalink = "location.href='/profile.php?id=" . $author_id . "'";
-
+$avalink = "location.href='/profile.php?id=" . $data['author_id'] . "'";
 echo "<div id='comments'>
     <div class='list'>
         <li>
             <div class='body'>
                 <div class='thumb'>
-                    <img alt='' src='$avatar' onclick=" . $avalink . ">
+                    <img alt='' src='" . AuthorAvatar($data['author_id']) . "'' onclick=" . $avalink . ">
                 </div>
                 <div class='leftpointer'></div>
                 <div class='quote'>
                     <div class='textinfo'>
-                        <a href='/profile.php?id=" . $author_id . "' class='user'>" . htmlspecialchars($authorname) . "</a>
-                        <span class='time'>$ctime</span>
+                        <a href='/profile.php?id=" . $data['author_id'] . "' class='user'>" . AuthorName2($data['author_id']) . "</a>
+                        <span class='time'>" . $data['ctime'] . "</span>
                     </div>
-                    <p>" . htmlspecialchars($comment) . "</p>
+                    <p>" . htmlspecialchars($data['comment']) . "</p>
                 </div>
             </div>
         </li>

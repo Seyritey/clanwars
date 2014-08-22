@@ -1,16 +1,12 @@
 <?php
 $logout = $_GET['logout'];
+include 'blocks/header.php';
 if ($logout == 'plus') {
-session_start();
 session_unset();
 session_destroy();
-session_start();
+$_SESSION['login'] = NULL;
     }
-    
-include 'blocks/header.php';
 head ('Главная - ClanWars.su');
 include 'blocks/news.php';
 include 'blocks/footer.php';
-
-
 ?>

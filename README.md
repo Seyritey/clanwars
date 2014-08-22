@@ -17,6 +17,7 @@ Russian doc.
 - Клан<br>
 - Добавление клана<br>
 - Axaj-ить готовые элементы<br>
+- Заменить(ситуативно) php на js
 
 Низкий приоритет:<br>
 - .htacess полность настроить<br>
@@ -31,4 +32,4 @@ Russian doc.
 - Регистрация/Авторизация через вк<br>
 - Модуль новостей<br>
 - favicon сайта<br>
-- экранирование dbconnect,footer,vkfuthor,news,news2,profile,header,index
+- безопасность, экранирование dbconnect,footer,vkfuthor,news,news2,profile,header,index

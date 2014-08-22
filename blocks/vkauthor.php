@@ -1,4 +1,6 @@
 <?php
+include_once '/dbconnect.php';
+global $db;
 $client_id = '4510119'; // ID приложения
 $client_secret = 'lGnqmBphXLzjW4xQKJca'; // Защищённый ключ
 $redirect_uri = 'http://clanwars'; // Адрес сайта
@@ -36,15 +38,12 @@ if (isset($_GET['code'])) {
             $result = true;
         }
     }
-
-    $query = mysql_query("SELECT COUNT(social_id) FROM users WHERE social_id='".mysql_real_escape_string($userInfo['uid'])."'");
-    $query24 = "SELECT id,name FROM users WHERE social_id=" . mysql_real_escape_string($userInfo['uid']);
-    $res24 = mysql_query($query24);
-    $result24 = mysql_fetch_assoc($res24);
-    $login = mysql_real_escape_string($result24['name']);
+    $query = $db->query("SELECT COUNT(social_id) FROM users WHERE social_id=?i",$userInfo['uid']);
+    $query24 = $db->query("SELECT id,name FROM users WHERE social_id=?i",$userInfo['uid']);
+    $result24 = mysqli_fetch_array($query24);
+    $login = $result24['name'];
     $uid = $result24['id'];
-    if(mysql_result($query, 0) > 0)
-
+    if ($query > 0)
     {
 
         $_SESSION['login'] = $login;
@@ -53,19 +52,21 @@ if (isset($_GET['code'])) {
     }
     elseif(count($err) == 0)
     {
-    	$name = mysql_real_escape_string($userInfo['first_name']) . " " . mysql_real_escape_string($userInfo['last_name']);
-    	$social_id = $userInfo['uid'];
-    	$avatar_big = $userInfo['photo_400_orig'];
-        $avatar_small = $userInfo['photo_100'];
-        $sex = $userInfo['sex'];
-        $bdate = $userInfo['bdate'];
-    	$result = mysql_query("INSERT INTO users SET name='".$name."', social_id='.$social_id.', sex='.$sex.', bdate='$bdate'") or die("В процессе регистрации/авторизации произошла ошибка, обратитесь к администрации в скайп: ClanwarsContact");
-        $query24 = "SELECT id,name FROM users WHERE social_id=" . $userInfo['uid'];
-        $res24 = mysql_query($query24);
-        $result24 = mysql_fetch_assoc($res24);
-        $login = mysql_real_escape_string($result24['name']);
+        $nuser = array(
+            'name'         => $userInfo['first_name'] . $userInfo['last_name'],
+            'social_id'       => $userInfo['uid'],
+            'avatar_big'       => $userInfo['photo_100'],
+            'sex'       => $userInfo['sex'],
+            'bdate'       => $userInfo['bdate'],
+            'avatar_small' => $userInfo['photo_400_orig']
+        );
+
+    	$result = $db->query("INSERT INTO users SET name=?s, social_id=?i, sex=?i, bdate=?s",$nuser['name'],$nuser['social_id'],$nuser['sex'],$nuser['bdate']) or die("В процессе регистрации/авторизации произошла ошибка, обратитесь к администрации в скайп: ClanwarsContact");
+        $query24 = $db->query("SELECT id,name FROM users WHERE social_id=?i",$userInfo['uid']);
+        $result24 = mysqli_fetch_array($query24);
+        $login = $result24['name'];
         $uid = $result24['id'];
-        $ress = mysql_query("INSERT INTO avatars SET id='".$uid."', big='$avatar_big', small='$avatar_small'");
+        $ress = $db->query("INSERT INTO avatars SET id=?i, big=?s, small=?s",$uid,$avatar_big,$avatar_small);
             $_SESSION['login'] = $login;
             $_SESSION['uid'] = $uid;
             header ("Location: index.php");
