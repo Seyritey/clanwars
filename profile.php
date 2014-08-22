@@ -8,7 +8,13 @@ $resname2 = mysqli_fetch_array($result2);
 $name = $resname['name'];
 $name = htmlspecialchars($name);
 head ($name . ' - ClanWars');
-echo "$name <img src='" . $resname2['big'] . "' alt='" . $name . "' class='img-thumbnail'>
+echo " <div class='username'>$name</div>
+<div>
+	<div class='leftinfo'>Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск Город: Крыжопинск </div>
+	<img src='" . $resname2['big'] . "' alt='" . $name . "' class='img-thumbnail userava'>
+	<div class='rigthinfo'> Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй Игровой класс: Оболдуй </div>
+</div>
+<div class='aboutuser'></div>
 ",$resname['bdate'],
 $resname['sex'],
 $resname['karma'],"

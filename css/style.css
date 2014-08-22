@@ -113,3 +113,86 @@ fieldset[disabled] .btn2 {
 #comments .textinfo{ font-size:11px; margin:0; padding:0px; color: gray;}
 #comments .textinfo .user{ font-size:14px; margin:0; padding:0px; color: #006595; font-weight: bold; }
 #comments .textinfo .time{ font-size:12px; margin:0; padding:0px; color: gray; margin-left: 2px;}
+
+.username {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 14px;
+  font: 1.4em italic sans-serif;
+  height: 50px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  margin-bottom: 10px;
+}
+
+.userava{
+  float: left;
+  display: block;
+  left: 40%;
+  min-heigth: 100px;
+  width: 34%;
+  max-height: 455px;
+  margin:0px auto;
+  margin-right: 2%;
+}
+.leftinfo{
+      display: block;
+  float: left;
+  margin-right: 2%;
+  width: 31%;
+  text-align: center;
+  padding: 2%;
+  font: 1.2em italic sans-serif;
+  max-height: 455px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  margin-bottom: 10px;
+
+}
+.rigthinfo{
+    display: block;
+ float: right;
+ width: 31%;
+   padding: 2%;
+  text-align: right;
+  font: 1.2em italic sans-serif;
+  max-height: 455px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+.aboutuser {
+  margin-top: 10px;
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+    border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.cbm_wrap {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    width: 300px;
+    min-height:310px;
+    background: #EBEBEB;
+    border: 1px solid #CCC;
+    margin: 20px auto;
+    position: relative;
+    padding: 20px 10px 10px;
+}
