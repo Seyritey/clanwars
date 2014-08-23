@@ -12,8 +12,6 @@ include_once 'blocks/dbconnect.php';
     <link href="css/style.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   </head>
   <body>
 <nav class="navbar navbar-default" role="navigation">
