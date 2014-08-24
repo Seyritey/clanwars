@@ -50,11 +50,9 @@ $userlink = "location.href='/profile.php?id=" . $news['author_id'] . "'";
 echo <<<END
                   </tbody>
                 </table>
-                <br>
             </div>
         </div> <!-- /row -->
     </div> <!-- /container -->
-
 END;
 
 include_once 'blocks/footer.php';

@@ -1,7 +1,6 @@
 body{background: url(header.png) center top 60px no-repeat, url(bg.png);}
 
 .main{
-  overflow: auto;
   margin-top: 150px;
 	background-color: white;
 	border: 25px solid transparent;
@@ -10,6 +9,8 @@ body{background: url(header.png) center top 60px no-repeat, url(bg.png);}
   border-image: url(border.png) 25 round;
   background-position: 0px 10px;
   background-origin: border-box;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 .centr{text-align: center;}
 .rowname{width: 70%;}
