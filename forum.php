@@ -1,7 +1,7 @@
 <?php
 include 'blocks/header.php';
 head ('Форум - ClanWars.su'); ?>
-<div class="table-responsive container-fluid" style="margin: 0px auto; text-align: center;">
+<div class="table-responsive container-fluid" style="margin: 0px auto; text-align: center; ">
 <img src='http://test-clanwar.1gb.ru/style/forumimg.png' style="max-width: 100%; display:block; margin:0 auto;">
     <img src="http://test-clanwar.1gb.ru/style/forumcat1.png" style="max-width: 100%; ">
     <img src="http://test-clanwar.1gb.ru/style/forumcat2.png" style="max-width: 100%; ">
@@ -26,8 +26,7 @@ function startAjax(url){
           case 3: print_console("<br/><em>3: Идет обмен..</em>"); break
           case 4:{
            if(request.status==200){    
-                        print_console("<br/><em>4: Обмен завершен.</em>");
-                        document.getElementById("printResult").innerHTML = "<b>"+request.responseText+"</b>";
+
                      }else if(request.status==404){
                         alert("Ошибка: запрашиваемый скрипт не найден!");
                      }
@@ -45,7 +44,7 @@ function startAjax(url){
   }
 </script>
 
-<a href="#" onclick="startAjax('news.php');">Запустить php скрипт</a>  
+<a href="#" onclick="startAjax('blocks/news.php');">Запустить php скрипт</a>  
 <div id="console" style="border: 1px solid gray; width:250px; height: 110px; padding: 10px; background:lightgray;">
 Консоль выполнения запроса:
 </div>

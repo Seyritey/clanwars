@@ -1,22 +1,21 @@
 <?php
 include_once 'blocks/dbconnect.php';
 
-  function head($title) {
+  function head($title,$bgmainclass = 'main container') {
     echo <<<ST
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>$title</title>
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
   </head>
   <body>
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -26,7 +25,6 @@ include_once 'blocks/dbconnect.php';
       </button>
       <a class="navbar-brand" href="/index.php">ClanWars</a>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Ссылка</a></li>
@@ -74,11 +72,10 @@ if ($_SESSION['login']) {
   }
 
 echo <<<ORR
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
-<div class='main container'>
+<div class='$bgmainclass'>
   <div class='row> 
     <div class='span12'>
 ORR;
