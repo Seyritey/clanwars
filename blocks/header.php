@@ -1,15 +1,14 @@
 <?php
 include_once 'blocks/dbconnect.php';
-
-  function head($title) {
+  function head($title,$bgmainclass = 'main container') {
     echo <<<ST
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>$title</title>
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   </head>

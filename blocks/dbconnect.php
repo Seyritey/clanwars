@@ -578,10 +578,10 @@ class SafeMySQL
 
 $db = new SafeMysql(array('host' => 'mysql47.1gb.ru','user' => 'gb_clanwarsme', 'pass' => 'rapemegithub', 'db' => 'gb_clanwarsme', 'charset' => 'utf8'));
 $table = 'gb_clanwarsme';
-/*
+
 ini_set('display_errors',1);
 error_reporting(E_ALL);
-*/
+
 
 header ("Content-Type: text/html; charset=utf-8");
 ini_set('session.gc_maxlifetime', 120960);
