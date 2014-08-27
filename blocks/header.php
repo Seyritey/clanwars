@@ -77,7 +77,7 @@ echo <<<ORR
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class='main container'>
+<div class='$bgmainclass'>
   <div class='row> 
     <div class='span12'>
 ORR;

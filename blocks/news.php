@@ -1,6 +1,5 @@
 <?php
-$limit = 10;
-$result = $db->query("SELECT id,name,rating,author_id FROM news ORDER BY id desc LIMIT ?i",$limit);
+$result = $db->query("SELECT id,name,rating,author_id FROM news ORDER BY id desc LIMIT ?i",10);
 
 echo <<<START
             <h1 class="centr">Новости</h1>
@@ -50,10 +49,10 @@ $userlink = "location.href='/profile.php?id=" . $news['author_id'] . "'";
 echo <<<END
                   </tbody>
                 </table>
+                <br>
             </div>
         </div> <!-- /row -->
     </div> <!-- /container -->
 END;
-
 include_once 'blocks/footer.php';
 ?>
