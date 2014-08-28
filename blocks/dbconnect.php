@@ -8,9 +8,9 @@ class SafeMySQL
 	private $exname;
 
 	private $defaults = array(
-		'host'      => 'mysql47.1gb.ru',
+		'host'      => 'localhost',
 		'user'      => 'root',
-		'pass'      => '',
+		'pass'      => '07051995',
 		'db'        => 'test',
 		'port'      => NULL,
 		'socket'    => NULL,
