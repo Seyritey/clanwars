@@ -64,22 +64,18 @@ head ('Клан ' . $clan['name'],'main');
 											<img style='width: 6vw; height: auto;' src="css/tslogo.png" alt="">
 
 				</div>
-				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 0px 1% 1% 1%;'>Лидер клана:</blockquote>
-						<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
-							<div class='thumbnail' style='border-radius: 50%; margin: 0px 0px 9px 0px;'>
-							<img style='border-radius: 50%; max-width: 10vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
-							</div>
-							<p>Seyritey</p>
+				<div class="switch">
+    <button class="js-table">Таблицей</button>
+    <button class="js-grid">Сеткой</button>
+</div>
+				<div class='js-list'>
+				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 5px 1% 1% 1%;'>Лидер клана:</blockquote>
+				<div class='leaderinfo'>
+				    <img class='leaderimg' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="" />
+				</div>
 
-						</div>
-						<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
-							<div class='thumbnail' style='border-radius: 50%; margin: 0px 0px 9px 0px;'>
-							<img style='border-radius: 50%; max-width: 10vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
-							</div>
-							<p>Seyritey</p>
-						</div>
 
-				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 0px 1% 1% 1%;'>Заместитель:</blockquote>
+				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 5px 1% 1% 1%;'>Заместитель:</blockquote>
 							<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
 								<img style='border-radius: 50%; max-width: 5vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
 								<p style='font-size: 90%; margin-top: 2%;'>Seyritey</p>
@@ -96,11 +92,12 @@ head ('Клан ' . $clan['name'],'main');
 								<img style='border-radius: 50%; max-width: 5vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
 								<p style='font-size: 90%; margin-top: 2%;'>Seyritey</p>
 							</div>
-				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 0px 1% 1% 1%;'>Командиры:</blockquote>
+				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 5px 1% 1% 1%;'>Командиры:</blockquote>
 					<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
 							<img style='border-radius: 50%; max-width: 4vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
 							<p style='font-size: 80%; margin-top: 2%;'>Seyritey</p>
-					</div>	
+					</div>
+				</div>
 						
 
 						</div>
@@ -115,7 +112,7 @@ head ('Клан ' . $clan['name'],'main');
 
 	</div>
 	<div style='width: 55%; min-height: 950px; height: 100%; float: left; background-color: white; border-top-right-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, .2);'>
-			<h4 style='margin: 5px 3% 15px 3%; width: 94%; text-align: center; border-bottom: 1px groove grey; color: #484848;'>Публикации клана<h4>
+			<h4 style='margin: 5px 1% 15px 1%; width: 98%; text-align: center; border-bottom: 1px groove grey; color: #484848;'>Публикации клана<h4>
 
 
 
