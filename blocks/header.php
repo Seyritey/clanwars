@@ -6,12 +6,12 @@ include_once 'blocks/dbconnect.php';
 <html lang="en">
   <head>
     <title>$title</title>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="icon" href="/favicon.png" type="image/x-icon">
-    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type='text/javascript' src="/js/clan.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
   </head>
   <body>
 <nav class="navbar navbar-default" role="navigation">

@@ -7,7 +7,7 @@ head ('Клан ' . $clan['name'],'main');
 <div class='fullclan'>
 	<div class='clanname'>Roma Potens</div>
 
-	<div style='width: 45%; height: 100%; float: left; background-color: white; border-right: 1px groove grey; border-top-left-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, .2);'>
+	<div style='width: 50%; height: 100%; float: left; background-color: white; border-right: 1px groove grey; border-top-left-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, .2);'>
 		<div style='width: 30%;  min-height: 950px; height: 100%; float: left; border-right: 1px groove grey;'>
 			<h4 style='margin: 5px 3% 15px 3%; width: 94%; text-align: center; border-bottom: 1px groove grey; color: #484848;'>О клане<h4>
 			<h5 style='margin: 0px 0% 0px 7%; width: 93%; text-align: left; color: #484848;'>Тег на сайте: [RP]<h4>
@@ -64,54 +64,49 @@ head ('Клан ' . $clan['name'],'main');
 											<img style='width: 6vw; height: auto;' src="css/tslogo.png" alt="">
 
 				</div>
-				<div class="switch">
-    <button class="js-table">Таблицей</button>
-    <button class="js-grid">Сеткой</button>
-</div>
+				<button id='switch' class='glyphicon glyphicon-th-large btn-list'></button>
 				<div class='js-list'>
-				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 5px 1% 1% 1%;'>Лидер клана:</blockquote>
+
 				<div class='leaderinfo'>
 				    <img class='leaderimg' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="" />
-				</div>
-
-
-				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 5px 1% 1% 1%;'>Заместитель:</blockquote>
-							<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
-								<img style='border-radius: 50%; max-width: 5vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
-								<p style='font-size: 90%; margin-top: 2%;'>Seyritey</p>
-							</div>
-							<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
-								<img style='border-radius: 50%; max-width: 5vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
-								<p style='font-size: 90%; margin-top: 2%;'>Seyritey</p>
-							</div>
-							<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
-								<img style='border-radius: 50%; max-width: 5vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
-								<p style='font-size: 90%; margin-top: 2%;'>Seyritey</p>
-							</div>
-							<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
-								<img style='border-radius: 50%; max-width: 5vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
-								<p style='font-size: 90%; margin-top: 2%;'>Seyritey</p>
-							</div>
-				<blockquote style='display: inline-block; background-color: rgba(220,220,220,0.2); width: 67%; margin: 5px 1% 1% 1%;'>Командиры:</blockquote>
-					<div style='float: left; margin-left: 10px; text-align: center; color: #444; padding: 10px 1% 10px 10px;'>
-							<img style='border-radius: 50%; max-width: 4vmin; height: auto; ' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
-							<p style='font-size: 80%; margin-top: 2%;'>Seyritey</p>
+				    <div class='leadername name'>Лидер: Seyritey<br/>
+				     <i>R 210.23<br>
+				     50 дней</i>
 					</div>
 				</div>
-						
-
-						</div>
-			
 
 
-
-
-
+				<blockquote class='strang'>Заместитель:</blockquote>
+							<div class='zam'>
+								<img class='imgzam' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
+								<p class='name'>Seyritey</p>
+							</div>
+							<div class='zam'>
+								<img class='imgzam' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
+								<p class='name'>Seyritey</p>
+							</div>
+							<div class='zam'>
+								<img class='imgzam' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
+								<p class='name'>Seyritey</p>
+							</div>
+							<div class='zam'>
+								<img class='imgzam' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
+								<p class='name'>Seyritey</p>
+							</div>
+				<blockquote class='strang'>Командиры:</blockquote>
+					<div class='zam'>
+							<img class='ryadovoi' src="http://cs614929.vk.me/v614929462/1c6c4/_TxlOPfrHMo.jpg" alt="">
+							<p class='name'>Seyritey</p>
+					</div>
+					
+				</div>
+			</div>
 		</div>
-
-
 	</div>
-	<div style='width: 55%; min-height: 950px; height: 100%; float: left; background-color: white; border-top-right-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, .2);'>
+	
+
+
+	<div style='width: 50%; min-height: 950px; height: 100%; float: left; background-color: white; border-top-right-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, .2);'>
 			<h4 style='margin: 5px 1% 15px 1%; width: 98%; text-align: center; border-bottom: 1px groove grey; color: #484848;'>Публикации клана<h4>
 
 
